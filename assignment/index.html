@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>OBA MusicFinder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./src/css/styles.css"/>
+</head>
+<body>
+    <main>
+        <div class="loader">
+            <span>Loading...</span>
+            <div class="ball"></div>
+            <div class="ball"></div>
+            <div class="ball"></div>
+        </div>
+        <section id="welcome">
+            <header>
+                <a href="#">
+                    <img src="./src/assets/svg/oba_white.svg" alt="OBA Logo" class="logo">
+                </a>
+                <h2>MusicFinder</h2>
+            </header>
+            <div id="finder" class="active">
+                <div class="finder-controls">
+                    <button data-start>Scan Barcode</button>
+                </div>
+            </div>
+        </section>
+        <section id="album">
+                       
+        </section>
+        <input id="sidemenu" style="display:none;visibility: hidden;"type="checkbox">
+        <section id="wiki">
+            <label class="hidden" for="sidemenu">
+                <span>
+                    More info
+                </span>
+                <span>
+                    Less info
+                </span>
+            </label>
+            <aside class="music-score">
+                <h1>Musical Scores found on OBA</h1>
+                <ul>
+                    <li>
+                        <h1>Music scores</h1>
+                        <a>Rent Score</a>
+                    </li>
+                    <li>
+                        <h1>Music scores</h1>
+                        <a>Rent Score</a>
+                      </li>
+                    <li>
+                        <h1>Music scores</h1>
+                        <a>Rent Score</a>
+                      </li>
+                    <li>
+                        <h1>Music scores</h1>
+                        <a>Rent Score</a>
+                      </li>
+                    <li>
+                        <h1>Music scores</h1>
+                        <a>Rent Score</a>
+                      </li>
+                </ul>
+            </aside>
+            <aside class="wiki-artist">
+                <h1>Wiki's for the relevant artist</h1>
+            </aside>
+            <aside class="wiki-album">
+                <h1>Wiki's for the relevant album</h1>
+            </aside>
+        </section>
+    </main>
+    <script src="./src/js/dist/routie.js"></script>
+    <script src="./src/js/dist/quagga.min.js"></script>
+    <script src="./src/js/script.js" type="module"></script>
+</body>
+</html>
