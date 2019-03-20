@@ -6,7 +6,7 @@ const init = ()=>{
         "album-*":async(id)=>{
             if(!isNaN(id)){
                 let
-                    dataSet = await data.get("./src/db/db.json"),
+                    dataSet = await data.get("./db/db.json"),
                     dataQuery = data.matching(dataSet,id)[0]
                 
                 document.body.classList.add("loading")

@@ -1,17 +1,11 @@
-import * as router from "../js/modules/router.js"
+import * as scanner from "/js/modules/scanner.js"
 (()=>{
     'use strict'
     const
         app = {
             init:()=>{
-                router.init()
+                scanner
             }
         }
     app.init()
-
-    String.prototype.replaceAll = function(search, replacement) {
-        var target = this;
-        return target.replace(new RegExp(search, 'g'), replacement);
-    };
-
 })()

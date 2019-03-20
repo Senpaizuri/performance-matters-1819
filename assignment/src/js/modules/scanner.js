@@ -34,7 +34,7 @@ const
             finder.classList.remove("active")
             console.log("code found", data.codeResult.code)
             Quagga.stop()
-            window.location.hash = "album-" + code
+            window.location.pathname = "album/" + code
         })
     }
 
@@ -46,8 +46,5 @@ const
         init()
     })
 })()
-
-
-
 
 export {init,detect}

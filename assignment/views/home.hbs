@@ -1,0 +1,101 @@
+ <main>
+        <div class="loader">
+            <span>Loading...</span>
+            <div class="ball"></div>
+            <div class="ball"></div>
+            <div class="ball"></div>
+        </div>
+        <section id="welcome">
+            <header>
+                <a href="#">
+                    <img src="/assets/svg/oba_white.svg" alt="OBA Logo" class="logo">
+                </a>
+                <h2>MusicFinder</h2>
+            </header>
+            <div id="finder" class="active">
+                <div class="finder-controls">
+                    <button data-start>Scan Barcode</button>
+                </div>
+            </div>
+        </section>
+        <section id="album">
+            <ul>
+                {{#each data.meta.preview.titles}}
+                    <li>
+                        <a class="lyric" href="https://musixmatch.com/lyrics/{{@../artists.[0]}}/{{this}}">
+                            Full Lyrics
+                        </a>
+                        <a class="title" href="https://musixmatch.com/lyrics/{{@../artists.[0]}}/{{this}}">
+                            <h2>{{this}}</h2>
+                        </a>
+                        <div class="iframecont">
+                            <div>#0{{@index}}</div>
+                            <iframe src="{{@../meta.preview.url.[0]}}" frameborder="0"></iframe>
+                        </div>
+                        <span>{{@../lyrics.0.lyrics_body}}</span>
+                    </li>
+                {{/each}}
+            </ul>
+        </section>
+        <input id="sidemenu" style="display:none;visibility:hidden;"type="checkbox">
+        <section id="wiki">
+            <label for="sidemenu">
+                <span>
+                    More info
+                </span>
+                <span>
+                    Less info
+                </span>
+            </label>
+            <aside class="music-score">
+                <h1>Musical Scores found on OBA</h1>
+                <ul>
+                    <li>
+                        <h1>Music scores</h1>
+                        <a>Rent Score</a>
+                    </li>
+                    <li>
+                        <h1>Music scores</h1>
+                        <a>Rent Score</a>
+                      </li>
+                    <li>
+                        <h1>Music scores</h1>
+                        <a>Rent Score</a>
+                      </li>
+                    <li>
+                        <h1>Music scores</h1>
+                        <a>Rent Score</a>
+                      </li>
+                    <li>
+                        <h1>Music scores</h1>
+                        <a>Rent Score</a>
+                      </li>
+                </ul>
+            </aside>
+            <aside class="wiki-artist">
+                <ul>
+                    {{#each data.wikiData.artist}}
+                        <li>
+                            <a href="https://en.wikipedia.org/wiki/{{this.title}}">
+                                <h1>{{this.title}}</h1>
+                                <span>{{{this.snippet}}}</span>
+                            </a>
+                        </li>
+                    {{/each}}
+                </ul>
+            </aside>
+            <aside class="wiki-album">
+                <h1>Wiki's for the relevant album</h1>
+                <ul>
+                    {{#each data.wikiData.album}}
+                        <li>
+                            <a href="https://en.wikipedia.org/wiki/{{this.title}}">
+                                <h1>{{this.title}}</h1>
+                                <span>{{{this.snippet}}}</span>
+                            </a>
+                        </li>
+                    {{/each}}
+                </ul>
+            </aside>
+        </section>
+    </main>
