@@ -1,21 +1,20 @@
-const
-    init = ()=>{
+var init = function(){
         if (navigator.mediaDevices && typeof navigator.mediaDevices.getUserMedia === 'function') {
             Quagga.init({
                 inputStream : {
                     name : "Live",
                     type : "LiveStream",
                     target: finder
-                  },constraints: {
+                },constraints: {
                     width: 480,
                     height: 480
-                  },
-                  decoder : {
+                },
+                decoder : {
                     readers : ["ean_reader"]
-                  },
-                  debug:{
-                      drawScanline:true
-                  }
+                },
+                debug:{
+                    drawScanline:true
+                }
                 }, function(err) {
                     if (err) {
                         console.log(err);
@@ -27,22 +26,18 @@ const
         }
         detect()
     },
-    detect = ()=>{
-        Quagga.onDetected((data)=>{
-            let
-                code = data.codeResult.code
+    detect = function(){
+        Quagga.onDetected(function(data){
+            var code = data.codeResult.code
             finder.classList.remove("active")
             console.log("code found", data.codeResult.code)
             Quagga.stop()
             window.location.pathname = "album/" + code
         })
-    }
+    },
+    finder = document.querySelector("#finder")
 
-(()=>{
-    let finder = document.querySelector("#finder")
-
-    document.querySelector("[data-start]").addEventListener("click",()=>{
-        finder.classList.add("active")
-        init()
-    })
-})()
+document.querySelector("[data-start]").addEventListener("click",function(){
+    finder.classList.add("active")
+    init()
+})

@@ -9,6 +9,7 @@
     font-family: 'Josefin sans', sans-serif;
     color: inherit;
     font-style: normal;
+    font-display: swap;
     position: relative;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

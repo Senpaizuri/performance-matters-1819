@@ -6,7 +6,18 @@ const
     onHeaders = require("on-headers"),
     app = express(),
     port = process.env.port,
-    data = require("./lib/data.js")
+    data = require("./lib/data.js"),
+    shrinkRay = require("shrink-ray")
+
+app.use(shrinkRay({  cache: () => false,  cacheSize: false,  filter: () => true,  brotli: { 
+    quality: 4, // between 1 and 11  
+    }, 
+    zlib: { 
+    level: 6 // between 1 and 9  
+        } 
+    })
+)
+
 
 hbs.create({
     helpers:{
