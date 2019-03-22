@@ -6,6 +6,8 @@
     <title>OBA MusicFinder</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/opt/index.css"/>
+    <link rel="preload" as="script" href="/opt/index.js" crossorigin>
+    <link rel="preconnect" href="fonts.google.com">
 </head>
 <body>
 <style>
@@ -15,103 +17,103 @@
     padding: 0;
     list-style: none;
     text-decoration: none;
+    font-display: swap;
     box-sizing: border-box;
     font-family: 'Josefin sans', sans-serif;
     color: inherit;
     font-style: normal;
-    font-display: swap;
     position: relative;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-}
+    }
 
-:root{
-    --mainRed: #f14a2d;
-    --mainWhite: #f1f1f1;
-    --mainGrey: #424242;
-    --mainOrange: #fbb03b;
+    :root{
+        --mainRed: #f14a2d;
+        --mainWhite: #f1f1f1;
+        --mainGrey: #424242;
+        --mainOrange: #fbb03b;
 
-    --mainGradient: -webkit-linear-gradient(-45deg, var(--mainRed) 50%, var(--mainOrange));
+        --mainGradient: -webkit-linear-gradient(-45deg, var(--mainRed) 50%, var(--mainOrange));
 
 
-    --bodySize: calc(1rem + (1.75 - 1) * ((100vw - 300px) / (1600 - 300)));
-    --maxWidth: calc(20rem + (60 - 20) * ((100vw - 300px) / (1600 - 300)));
+        --bodySize: calc(1rem + (1.75 - 1) * ((100vw - 300px) / (1600 - 300)));
+        --maxWidth: calc(20rem + (60 - 20) * ((100vw - 300px) / (1600 - 300)));
 
-    --shadowClr: rgba(0,0,0,.15);
-    --mainShadow: 0 0 20px 0;
-    --txtshadow: 1px 1px 5px;
+        --shadowClr: rgba(0,0,0,.15);
+        --mainShadow: 0 0 20px 0;
+        --txtshadow: 1px 1px 5px;
 
-}
+    }
 
-iframe{
-    max-height: 3.75rem;
-    max-width: 25rem;
-}
+    iframe{
+        max-height: 3.75rem;
+        max-width: 25rem;
+    }
 
-#finder canvas,
-#finder [clear="all"]{
-    display: none;
-    visibility: hidden;
-}
+    #finder canvas,
+    #finder [clear="all"]{
+        display: none;
+        visibility: hidden;
+    }
 
-#finder{
-    width: var(--maxWidth);
-    padding: 1rem;
-    background: var(--mainWhite);
-    margin: auto;
-    display: flex;
-    flex-direction: column-reverse;
-    border-radius: 5px;
-}
+    #finder{
+        width: var(--maxWidth);
+        padding: 1rem;
+        background: var(--mainWhite);
+        margin: auto;
+        display: flex;
+        flex-direction: column-reverse;
+        border-radius: 5px;
+    }
 
-body{
-    background: var(--mainGradient);
-    min-height: 100vh;
-    font-size: var(--bodySize);
-    animation: wave 30s ease infinite;
-    background-size: 400%;
-    
-}
+    body{
+        background: var(--mainGradient);
+        min-height: 100vh;
+        font-size: var(--bodySize);
+        animation: wave 30s ease infinite;
+        background-size: 400%;
+        
+    }
 
-@keyframes wave {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-}
+    @keyframes wave {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
 
-section{
-    padding: 2rem;
-}
+    section{
+        padding: 2rem;
+    }
 
-/* 
-    Header
-*/
+    /* 
+        Header
+    */
 
-#welcome{
-    padding-top: 6rem;
-}
+    #welcome{
+        padding-top: 6rem;
+    }
 
-#welcome header{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem 1.5rem;
-    align-items: flex-end;
-    color: var(--mainWhite);
-}
+    #welcome header{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem 1.5rem;
+        align-items: flex-end;
+        color: var(--mainWhite);
+    }
 
-.logo{
-    height: 3rem;
-}
+    .logo{
+        height: 3rem;
+    }
 
-[data-start]{
-    display: block;
-    padding: .5rem .75rem;
-    margin: auto;
-    font-size: 1rem;
-    background: transparent;
-}
+    [data-start]{
+        display: block;
+        padding: .5rem .75rem;
+        margin: auto;
+        font-size: 1rem;
+        background: transparent;
+    }
 </style>
