@@ -41,6 +41,7 @@ app.get("/album/:album",async(req,res)=>{
             lyrics = await data.lyrics(dataSet),
             wiki = await data.getWiki(dataSet.title),
             wikiA= await data.getWiki(dataSet.artists[0])
+            console.log(dataSet)
         res.render("home",{data:{meta:dataSet,lyrics:lyrics,wikiData:{album:wiki.query.search,artist:wikiA.query.search}}})
     } else{
         res.render("404")

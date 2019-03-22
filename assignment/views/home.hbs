@@ -18,7 +18,20 @@
                 </div>
             </div>
         </section>
+        {{#if data}}
         <section id="album">
+            <header>
+                <img src={{data.meta.catalogusImg_m}} alt="album cover for {{data.meta.title}}">
+                <div class="meta">
+                    <div>
+                    {{#each data.meta.genre}}
+                        <span class="genre {{this}}">{{this}}</span>
+                    {{/each}}
+                    </div>
+                    <h1>{{data.meta.title}}</h1>
+                    <h2>{{data.meta.artists}}</h2>
+                </div>
+            </header>
             <ul>
                 {{#each data.meta.preview.titles}}
                     <li>
@@ -37,6 +50,7 @@
                 {{/each}}
             </ul>
         </section>
+        {{/if}}
         <input id="sidemenu" style="display:none;visibility:hidden;"type="checkbox">
         <section id="wiki">
             <label for="sidemenu">
