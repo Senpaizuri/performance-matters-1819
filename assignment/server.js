@@ -18,7 +18,6 @@ app.use(shrinkRay({  cache: () => false,  cacheSize: false,  filter: () => true,
     })
 )
 
-
 hbs.create({
     helpers:{
         link:(obj)=>{
