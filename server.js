@@ -42,7 +42,12 @@ app.get("/",async(req,res)=>{
 })
 
 app.get("/album/:album",async(req,res)=>{
-    let json = await data.get("http://localhost:3000/db/db.json")
+    let json = {}
+    if(port == 3000){
+        json = await data.get("http://localhost:3000/db/db.json")
+    }else{
+        json = await data.get("https://performancebois.heroku.com/db/db.json")
+    }
         
     dataSet = data.matching(json,req.params.album)[0]
 
