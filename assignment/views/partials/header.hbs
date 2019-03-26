@@ -6,12 +6,26 @@
     <title>OBA MusicFinder</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/opt/index.css"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans"/>
     <link rel="preload" as="script" href="/opt/index.js" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <meta name="theme-color" content="#fbb03b">
 </head>
 <body>
+
+    <datalist>
+        <option value="winter"></option>
+        <option value="summer"></option>
+        <option value="spring"></option>
+    </datalist>
+    
 <style>
+    @font-face{
+    font-family: "Josefin Sans";
+    font-style: normal;
+    font-weight: 400;
+    src: url("/css/fonts/josefinsans.woff2") format("woff2");
+    font-display: swap;
+    }
+
     *, *:before, *:after {
     border: none;
     margin: 0;
