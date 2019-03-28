@@ -13,7 +13,16 @@ Next, you should run this line to start the app. ez pz lemon squeezy 🍋
 ```bash
     npm i && npm start
 ```
+
+__The app can also be found [here 🔥](https://performancebois.herokuapp.com/)__
+
+### Base features
+__________________
+
+This app allows you to find music albums within the oba api with enhanced performance. This app is based on the it's previous itteration found [here](https://senpaizuri.github.io/project-1-1819/#album-9783935728973)
+
 ## NPM Scripts
+__________________
 
 This build includes a few npm scripts
 
@@ -30,6 +39,7 @@ This build includes a few npm scripts
 * *expose* -> Exposes the localhost:3000 to an online IP with NGROK easier online testing and tooling
 
 ## Serverside Node
+__________________
 
 The Node server runs with [Express.js 🚅](https://expressjs.com/) and handles the templating with [handlebars 👨🏻](https://handlebarsjs.com/)
 Furthermore, [Gulp 🍹](https://gulpjs.com/) is used for tooling.
@@ -54,6 +64,7 @@ With a first paint at __10s__ ,first meaningfull paint after __16.7__ seconds an
 ![Audit screenshot with horrible loadtimes](./screenshots/audit[slow].png)
 
 ## Step 1 - ServerSide Rendering 💻
+__________________
 
 I started out with server side rending.
 Let all "heavy lifting" 🏋🏻‍ be done serverside.
@@ -69,8 +80,10 @@ With server side rendering alone is saved about 15ish seconds
 That's huge 🌎
 
 ## Step 2 - Minifying and Compression 🔍 & 📚
+__________________
 
 ### Minify 🔍
+__________________
 
 Secondly I wanted to serve minified files.
 I was intrested in [Gulp 🍹](https://gulpjs.com/) so I picked that that up for this perticular task.
@@ -96,6 +109,7 @@ My `gulpfile.js` contained 3 tasks
 I also used npm scripts to define easier building/minifying as mentioned above with the NPM scripts.
 
 ### Compression 📚
+__________________
 
 Next I had to compress the files.
 I used [Shrinkray](https://www.npmjs.com/package/shrink-ray) for this.
@@ -111,6 +125,7 @@ however, the files were so small that the encoding itself didn't matter much.
 ![Encoding list](./screenshots/encoding.png)
 
 ## Step 3 - Custom Fonts 🔡
+__________________
 
 The next item on my list, Fonts.
 Since css is render blocking nothing will be shown until the css is downloaded and parsed ect ect.
@@ -124,10 +139,24 @@ Kablam, the first text showed up along with the first paint.
 The gap from no content to content shown had shrunk by a good 2s since the font didn't need to be loaded from an external source and the font wouldn't be necessary thanks to `font-display:swap;`
 
 ## Step 4 - Critical CSS 🚨
+__________________
 
 Percieved perfomance can and will enhance the users experience.
-To achieve this we can use a trick with css, Critical CSS 🚨
-s
+To achieve this we can use a trick with css, Critical CSS 🚨.
+Critical CSS is a piece of your css file. 
+It's supposed to only contain the css for what's immediately shown above the fold of your magnificent ✨web page.
+This will up the percieved performance as the rest of the css file is loaded in later and will supplement the rest of the css.
+
+I first tried to create the Critical CSS on my own, but failed. It was usable for the most part. But it lacked certain important items.
+Then I found an online tool [Critical CSS Generator](https://jonassebastianohlsson.com/criticalpathcssgenerator/).
+You can throw you're site at it and it smacks you in the face with the Critical CSS 🚨 that you can just copy paste into your html file.
+
+Optimally you'd automize it. Everytime you change your CSS the Critical CSS 🚨 is regenerated to fit your needs. However, since I didn't find a need to constantly keep changing my CSS or HTML I had no need for this 🤷‍.
+
+## Step 5 - Service Worker 👨‍💻
+___________________
+
+
 
 
 <!-- Add a link to your live demo in Github Pages 🌐-->
