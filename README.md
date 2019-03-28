@@ -167,19 +167,24 @@ If I'd had more time it could've been more fleshed out and the site would've bee
 
 For now the main index works offline. However, it's detail pages do not.
 
-## Final Build 🏅
+# Final Build 🏅
+
+![Finalbuild of the webapp](./screenshots/finalbuild.png)
 
 The final build results:
 
-First Content full paint
+|   |old |new |dif |
+|---|----|----|----|
+|FCP|2.3s|1.0s|1.3s|   
+|FMP|2.5s|1.0s|1.5s|   
+|TTI|3.1s|2.1s|1.0s|   
 
-|   |old|new|   |   |
-|---|---|---|---|---|
-|FCP|   |   |   |   |
-|FMP|   |   |   |   |
-|DCL|   |   |   |   |
+_**FCP**: First contentful paint_,_**FMP**: First meaingfull paint_,_**TTI**: Time to Interactive_
 
-_FCP: First contentful paint_,_FMP: First meaingfull paint_,_DCL: Dom content loaded_
+**Overall improvement is about 1.3s!** 🏃🏻
+
+Keep in mind that this is on a fast network.
+On a slow 3G network the differences are bound to be bigger.
 
 # Whishlist
 
@@ -197,21 +202,3 @@ You can always dream.
 # License
 
 Copyright © 2019 Maikel Sleebos. Released under the [MIT license](https://opensource.org/licenses/MIT)
- 
-<!-- Add a link to your live demo in Github Pages 🌐-->
-
-<!-- ☝️ replace this description with a description of your own work -->
-
-<!-- Add a nice image here at the end of the week, showing off your shiny frontend 📸 -->
-
-<!-- Maybe a table of contents here? 📚 -->
-
-<!-- How about a section that describes how to install this project? 🤓 -->
-
-<!-- ...but how does one use this project? What are its features 🤔 -->
-
-<!-- What external data source is featured in your project and what are its properties 🌠 -->
-
-<!-- Maybe a checklist of done stuff and stuff still on your wishlist? ✅ -->
-
-<!-- How about a license here? 📜 (or is it a licence?) 🤷 -->
