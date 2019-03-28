@@ -104,6 +104,27 @@ This package can compress files into `gzip` and `brotli` formats.
 The request headers usually give an encoding type for it's files.
 If I'm not mistaken [Shrinkray](https://www.npmjs.com/package/shrink-ray) can now determine which compression method to apply so it can send the appropriate files to the browser.
 
+The encoding and minifying did shave of a few bytes from the original files along with load time (duh)
+
+however, the files were so small that the encoding itself didn't matter much.
+
+![Encoding list](./screenshots/encoding.png)
+
+## Step 3 - Custom Fonts 🔡
+
+The next item on my list, Fonts.
+Since css is render blocking nothing will be shown until the css is downloaded and parsed ect ect.
+I didn't pay close attention to this and kinda messed up.
+At the time is was still using a Google font. I tried to preload the dns which worked. but couldn't get the page to show the content without the need for the external font.
+So I tried the `font-dispay:swap;`. Didn't work. Frustration ensued
+
+Later I learned that `font-display:swap;` had to be defined within the `@font-face`.
+So I started to host the font myself.
+Kablam, the first text showed up along with the first paint.
+The gap from no content to content shown had shrunk by a good 2s since the font didn't need to be loaded from an external source and the font wouldn't be necessary thanks to `font-display:swap;`
+
+## Step 4 - Service Worker 👨‍💻
+
 
 
 <!-- Add a link to your live demo in Github Pages 🌐-->
