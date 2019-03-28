@@ -123,8 +123,11 @@ So I started to host the font myself.
 Kablam, the first text showed up along with the first paint.
 The gap from no content to content shown had shrunk by a good 2s since the font didn't need to be loaded from an external source and the font wouldn't be necessary thanks to `font-display:swap;`
 
-## Step 4 - Service Worker 👨‍💻
+## Step 4 - Critical CSS 🚨
 
+Percieved perfomance can and will enhance the users experience.
+To achieve this we can use a trick with css, Critical CSS 🚨
+s
 
 
 <!-- Add a link to your live demo in Github Pages 🌐-->
