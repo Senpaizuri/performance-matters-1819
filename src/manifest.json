@@ -1,9 +1,9 @@
 
 {
-    "name": "Websap! \n Chat on the web!",
-    "short_name": "Websap!",
-    "theme_color": "#1a4e57",
-    "background_color": "#1a4e57",
+    "name": "Search Albums on the OBA Music API!",
+    "short_name": "OBA Music Finder",
+    "theme_color": "#fbb03b",
+    "background_color": "#fbb03b",
     "display": "standalone",
     "orientation": "portrait",
     "start_url": "/?homescreen=true"

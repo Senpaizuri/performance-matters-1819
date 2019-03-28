@@ -1,38 +1,66 @@
-# Performance Matters @cmda-minor-web · 2018-2019
+# OBA Musicfinder[🔥 Enhanced Edition 🔥]
 
-In dit vak gaan we de eerder bij de OBA gemaakte client side web applicatie ombouwen naar een server side gerenderde applicatie. Verder gaan we een reeks van optimalisaties doorvoeren om de performance van de applicatie te verbeteren. Uiteindelijk zorgen we ervoor dat de applicatie offline beschikbaar.
+## Running the App
 
-## Leerdoelen
-- _Je weet het verschil tussen client side en server side rendering en kan server side rendering toepassen_
-- _Je begrijpt hoe de critical render path werkt, en hoe je deze kan optimaliseren voor een betere runtime en/of perceived performance._
-- _Je begrijpt hoe een Service Worker werkt en kan deze in jou applicatie implementeren._
+To run the app locally you can Clone this repo
 
-[Rubric](https://docs.google.com/spreadsheets/d/e/2PACX-1vTO-pc2UMvpT0pUjt6NJeckc5N9E7QvCxEfVJW1JjuM0m_9MM8ra05J0s6br486Rocz5JVMhAX_C37_/pubhtml?gid=0&single=true)
+```bash
+    git clone https://github.com/Senpaizuri/performance-matters-1819.git
+```
 
-## Lesprogramma
+Next, you should run this line to start the app. ez pz lemon squeezy 🍋
 
-### Week 1 - Server Side rendering
+```bash
+    npm i && npm start
+```
+## NPM Scrips
 
-Doel: Webpagina's server side renderen
+This build includes a few npm scripts
 
-[Opdrachten](https://github.com/cmda-minor-web/performance-matters-1819/blob/master/week-1.md)
+```json
+    "scripts": {
+        "start": "gulp build && node server.js",
+        "minimize": "gulp build",
+        "expose": "npx ngrok http 3000"
+    }
+```
 
-[Slides](...)
+* *start* -> Builds new files to the "/opt/" directory and boots the node server
+* *minimize* -> Build new files
+* *expose* -> Exposes the localhost:3000 to an online IP with NGROK easier online testing and tooling
 
-### Week 2 - Critical Rendering Path  
+## Serverside Node
 
-Doel: Critical Rendering path optimaliseren
-[Opdrachten](https://github.com/cmda-minor-web/performance-matters-1819/blob/master/week-2.md)
+The Node server runs with [Express.js 🚅](https://expressjs.com/) and handles the templating with [handlebars 👨🏻](https://handlebarsjs.com/)
+Furthermore, [Gulp 🍹](https://gulpjs.com/) is used for tooling.
 
-[Slides](...)
+[Gulp 🍹](https://gulpjs.com/) handles the building of minimized files.
+[Gulp 🍹](https://gulpjs.com/) has a few extra dependencies within.
+Namely `CSSNANO` and `Uglify` to help minify the css and js respectively.
 
-### Week 3 - Going Offline 
+# Optimizations 🏃🏻
 
-Doel: Webpagina's offline beschikbaar stellen
+> Sonic is my name, Speeds my game 🏃🏻 - Sonic 20XX
 
-[Opdrachten](https://github.com/cmda-minor-web/performance-matters-1819/blob/master/week-3.md)
+The app itself was pretty slow.
+Namely Bad loadtimes with regards to fonts and api calls.
+The original demo can be found [here](https://senpaizuri.github.io/project-1-1819/).
 
-[Slides](...)
+The app was rendered almost exclusively on the client.
+This caused some mayor perfomance issues on slower connections.
+
+With a first paint at __1s__ ,first meaningfull paint after __16.7__ seconds and a recorde speed index of __18s__ 😅
+
+![Audit screenshot with horrible loadtimes](./screenshots/audit[slow].png)
+
+## Step 1 - ServerSide Rendering 💻
+
+I started out with server side rending.
+Let all "heavy lifting" 🏋🏻‍ be done serverside.
+
+This change alone showed reasonable improvements.
+
+
 
 
 <!-- Add a link to your live demo in Github Pages 🌐-->

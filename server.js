@@ -45,7 +45,6 @@ app.get("/album/:album",async(req,res)=>{
     let json = {}
     if(port == 3000){
         json = await data.get("http://localhost:3000/db/db.json")
-        console.log("local",json)
     }else{
         json = await data.get("https://performancebois.herokuapp.com/db/db.json")
     }
