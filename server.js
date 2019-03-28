@@ -45,6 +45,7 @@ app.get("/album/:album",async(req,res)=>{
     let json = {}
     if(port == 3000){
         json = await data.get("http://localhost:3000/db/db.json")
+        console.log("local",json)
     }else{
         json = await data.get("https://performancebois.herokuapp.com/db/db.json")
     }
@@ -56,7 +57,7 @@ app.get("/album/:album",async(req,res)=>{
             lyrics = await data.lyrics(dataSet),
             wiki = await data.getWiki(dataSet.title),
             wikiA= await data.getWiki(dataSet.artists[0])
-            console.log(dataSet)
+            // console.log(dataSet)
         res.render("home",{data:{meta:dataSet,lyrics:lyrics,wikiData:{album:wiki.query.search,artist:wikiA.query.search}}})
     } else{
         res.render("404")

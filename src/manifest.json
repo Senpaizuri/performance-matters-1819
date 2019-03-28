@@ -1,0 +1,10 @@
+
+{
+    "name": "Websap! \n Chat on the web!",
+    "short_name": "Websap!",
+    "theme_color": "#1a4e57",
+    "background_color": "#1a4e57",
+    "display": "standalone",
+    "orientation": "portrait",
+    "start_url": "/?homescreen=true"
+}
