@@ -198,6 +198,7 @@ You can always dream.
 - [x] Faster site, Better performance 🏃🏻
 - [ ] Better understanding of Service Workers 👨‍💻
 - [ ] Offline Detail pages 🚫
+- [ ] HTTP2 support
 
 # License
 
