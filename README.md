@@ -13,7 +13,7 @@ Next, you should run this line to start the app. ez pz lemon squeezy 🍋
 ```bash
     npm i && npm start
 ```
-## NPM Scrips
+## NPM Scripts
 
 This build includes a few npm scripts
 
@@ -49,7 +49,7 @@ The original demo can be found [here](https://senpaizuri.github.io/project-1-181
 The app was rendered almost exclusively on the client.
 This caused some mayor perfomance issues on slower connections.
 
-With a first paint at __1s__ ,first meaningfull paint after __16.7__ seconds and a recorde speed index of __18s__ 😅
+With a first paint at __10s__ ,first meaningfull paint after __16.7__ seconds and a recorde speed index of __18s__ 😅
 
 ![Audit screenshot with horrible loadtimes](./screenshots/audit[slow].png)
 
@@ -60,6 +60,49 @@ Let all "heavy lifting" 🏋🏻‍ be done serverside.
 
 This change alone showed reasonable improvements.
 
+![Audit screenshot with slight improvements](./screenshots/audit[serverSide].png)
+
+The first paint was after __1.9s__, first meaningfull paint after __1.9s__ and a speed index of  __3.1s__
+
+With server side rendering alone is saved about 15ish seconds
+
+That's huge 🌎
+
+## Step 2 - Minifying and Compression 🔍 & 📚
+
+### Minify 🔍
+
+Secondly I wanted to serve minified files.
+I was intrested in [Gulp 🍹](https://gulpjs.com/) so I picked that that up for this perticular task.
+
+Within gulp I used 2 Dependencies for minification:
+* *CSSNano*
+* *Uglify*
+
+My `gulpfile.js` contained 3 tasks
+```javascript
+    gulp.task("js",async()=>{ 
+        // Task JS, Minified and build new JS
+    })
+
+    gulp.task("css",async()=>{
+        // Task CSS, Minified and build new CSS
+    })
+
+    gulp.task("build",gulp.parallel("js","css"))
+    // Task Build, Runs both JS and CSS task
+```
+
+I also used npm scripts to define easier building/minifying as mentioned above with the NPM scripts.
+
+### Compression 📚
+
+Next I had to compress the files.
+I used [Shrinkray](https://www.npmjs.com/package/shrink-ray) for this.
+This package can compress files into `gzip` and `brotli` formats.
+
+The request headers usually give an encoding type for it's files.
+If I'm not mistaken [Shrinkray](https://www.npmjs.com/package/shrink-ray) can now determine which compression method to apply so it can send the appropriate files to the browser.
 
 
 

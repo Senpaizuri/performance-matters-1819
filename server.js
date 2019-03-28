@@ -12,7 +12,7 @@ const
 app.use(shrinkRay({  cache: () => false,  cacheSize: false,  filter: () => true,  brotli: { 
     quality: 4, // between 1 and 11  
     }, 
-    zlib: { 
+    gzip: { 
     level: 6 // between 1 and 9  
         } 
     })
